@@ -1,0 +1,40 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Gustavo Rosano Teixeira",
+      "email": "gustavo.rosano@outlook.com",
+      "faturamentoAnual": "R$ 1.000,00"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Silva",
+      "email": "maria.silva@example.com",
+      "faturamentoAnual": "R$ 2.500,00"
+    },
+    {
+      "id": 3,
+      "nome": "João Souza",
+      "email": "joao.souza@example.com",
+      "faturamentoAnual": "R$ 5.000,00"
+    }
+  ],
+
+  "enderecos": [
+    {
+        "usuarioId": 1,
+        "rua": "Av. Paulista",
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "cep": "04194-190"
+    },
+    {
+        "usuarioId": 2,
+        "rua": "Rua Augusta",
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "cep": "01305-010"
+    }
+]
+
+}
