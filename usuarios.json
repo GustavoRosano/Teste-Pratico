@@ -1,40 +1,72 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Gustavo Rosano Teixeira",
       "email": "gustavo.rosano@outlook.com",
       "faturamentoAnual": "R$ 1.000,00"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Maria Silva",
       "email": "maria.silva@example.com",
       "faturamentoAnual": "R$ 2.500,00"
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "João Souza",
       "email": "joao.souza@example.com",
       "faturamentoAnual": "R$ 5.000,00"
-    }
-  ],
-
-  "enderecos": [
-    {
-        "usuarioId": 1,
-        "rua": "Av. Paulista",
-        "cidade": "São Paulo",
-        "estado": "SP",
-        "cep": "04194-190"
     },
     {
-        "usuarioId": 2,
-        "rua": "Rua Augusta",
-        "cidade": "São Paulo",
-        "estado": "SP",
-        "cep": "01305-010"
+      "id": "6259",
+      "nome": "Gustavo",
+      "email": "gurosano@gmail.com",
+      "faturamentoAnual": "1000"
+    },
+    {
+      "id": "7478",
+      "nome": "Gustavo",
+      "email": "gurosano@gmail.com",
+      "faturamentoAnual": "1000"
+    },
+    {
+      "id": "3af3",
+      "nome": "Gustavo",
+      "email": "gurosano@gmail.com",
+      "faturamentoAnual": 100000
+    },
+    {
+      "id": "4c4b",
+      "nome": "Gustavo",
+      "email": "gurosano@gmail.com",
+      "faturamentoAnual": 100000
     }
-]
-
+  ],
+  "enderecos": [
+    {
+      "usuarioId": 1,
+      "rua": "Av. Paulista",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "04194-190",
+      "id": "1cf0"
+    },
+    {
+      "usuarioId": 2,
+      "rua": "Rua Augusta",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "01305-010",
+      "id": "bfb3"
+    },
+    {
+      "id": "2242",
+      "rua": "Teste",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "04191190",
+      "usuarioId": 1
+    }
+  ]
 }

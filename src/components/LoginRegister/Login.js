@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const loginSchema = z.object({
   email: z.string().email("E-mail inválido"),
@@ -9,64 +11,61 @@ const loginSchema = z.object({
 });
 
 const Login = ({ toggleRegister, toggleLoginRegister, setIsLoggedIn }) => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const [errors, setErrors] = useState({});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(loginSchema),
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    try {
-      loginSchema.parse(formData); 
+  const [feedbackMessage, setFeedbackMessage] = React.useState("");
 
-      if (formData.email === "gurosano@gmail.com" && formData.password === "123456") {
-        console.log("Login realizado com sucesso");
-        setIsLoggedIn(true); 
-        setErrors({});
-      } else {
-        setErrors({
-          email: "E-mail ou senha incorretos",
-        });
-      }
-    } catch (error) {
-      if (error.errors) {
-        const fieldErrors = {};
-        error.errors.forEach((err) => {
-          fieldErrors[err.path[0]] = err.message;
-        });
-        setErrors(fieldErrors);
-      }
+  const onSubmit = (data) => {
+    if (data.email === "gurosano@gmail.com" && data.password === "123456") {
+      console.log("Login realizado com sucesso");
+      
+      localStorage.setItem("isLoggedIn", "true");
+      setIsLoggedIn(true);
+      setFeedbackMessage(""); 
+    } else {
+      setFeedbackMessage("E-mail ou senha incorretos");
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
       <button onClick={toggleLoginRegister} className="text-sm">Voltar</button>
       <h1 className="font-bold text-2xl mb-7">Entre</h1>
+
       <input
-        name="email"
+        {...register("email")}
         type="email"
         placeholder="E-mail"
-        value={formData.email}
-        onChange={handleChange}
         className="mb-3 w-[600px] p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
-      {errors.email && <p className="text-red-500 text-sm mb-2">{errors.email}</p>}
+      {errors.email && <p className="text-red-500 text-sm mb-2">{errors.email?.message}</p>}
+
       <input
-        name="password"
+        {...register("password")}
         type="password"
         placeholder="Senha"
-        value={formData.password}
-        onChange={handleChange}
         className="mb-1 w-[600px] p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
-      {errors.password && <p className="text-red-500 text-sm mb-2">{errors.password}</p>}
-      <button type="submit" className="bg-[#1e9a9e] text-white font-bold rounded py-1 mb-3 mt-3">Entrar</button>
+      {errors.password && <p className="text-red-500 text-sm mb-2">{errors.password?.message}</p>}
+
+      <button type="submit" className="bg-[#1e9a9e] text-white font-bold rounded py-1 mb-3 mt-3">
+        Entrar
+      </button>
+
       <p className="text-sm text-[#2b2b2b]">Ainda não possui um cadastro?</p>
       <button onClick={toggleRegister} className="text-[#1e9a9e] mt-2">Cadastre-se</button>
+
+      {feedbackMessage && (
+        <div className="mt-4 p-4 text-white bg-red-500 rounded">
+          {feedbackMessage}
+        </div>
+      )}
     </form>
   );
 };
