@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Teste Prático - Sistema de Login e Cadastro
 
-## Getting Started
+Bem-vindo ao repositório do sistema de login e cadastro desenvolvido com **Next.js** e **TailwindCSS**, utilizando **Zod** e **React Hook Form** para validação de formulários. O projeto também conta com uma API simulada utilizando **JSON Server**.
 
-First, run the development server:
+Este guia ajudará você a configurar e executar o projeto, tanto para o frontend quanto para o backend.
+
+---
+
+## 🛠 Pré-requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
+
+- **Node.js** (versão 16 ou superior)
+- **npm**, **yarn**, ou **pnpm** (para gerenciar pacotes)
+- **Git** (opcional, mas recomendado)
+
+---
+
+## 🚀 Instruções para Configuração e Execução
+
+### 1. Clone o Repositório
+
+Clone este repositório em sua máquina local:
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+cd <NOME_DA_PASTA>
+```
+
+### 2. Instale as Dependências
+
+No diretório raiz do projeto, instale as dependências:
+
+```bash
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+```
+
+### 3. Configuração do Backend (JSON Server)
+
+O projeto utiliza o **JSON** Server para simular a API. Siga os passos abaixo para configurar e executar o backend:
+
+#### 1. Certifique-se de estar no diretório raiz do projeto.
+#### 2. Execute o comando abaixo para iniciar o JSON Server:
+
+```bash
+npx json-server --watch usuarios.json --port 5000
+```
+> O servidor estará disponível em http://localhost:5000.
+
+### 4. Execute o Frontend (Next.js)
+
+Para iniciar o servidor de desenvolvimento do frontend, use o seguinte comando:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
-bun dev
+```
+> O frontend estará disponível em http://localhost:3000.
+
+### 5. Executando Ambos Simultaneamente
+
+Você pode executar o backend e o frontend em terminais separados. Certifique-se de manter ambos ativos:
+
+#### 1. Abra dois terminais.
+#### 2. No primeiro terminal, execute o JSON Server:
+
+```bash
+npx json-server --watch db.json --port 5000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. No segundo terminal, execute o Next.js:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧪 Testando a Aplicação
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Login
+- **E-mail**: `teste.pratico@gmail.com`
+- **Senha**: `123456`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Cadastro
+- Preencha os campos com informações válidas para criar novos usuários.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📚 Tecnologias Utilizadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Frontend**: Next.js, React, TailwindCSS
+- **Validação**: Zod, React Hook Form
+- **Estado Global**: Zustand
+- **Backend Simulado**: JSON Server
+- **HTTP Client**: Axios
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛑 Problemas Comuns
+
+### Problema 1: "Porta já em uso"
+- Certifique-se de que nenhuma outra aplicação está usando as portas `3000` ou `5000`.
+- **Solução**: Encerrar o processo conflitante ou alterar as portas usadas.
+
+### Problema 2: "Não consigo acessar o backend"
+- Verifique se o **JSON Server** está rodando no terminal correto.
+
+---
+
+## 📄 Licença
+
+Este projeto é apenas para fins educacionais e não possui uma licença específica.
+
+---

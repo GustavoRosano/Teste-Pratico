@@ -22,7 +22,7 @@ const Login = ({ toggleRegister, toggleLoginRegister, setIsLoggedIn }) => {
   const [feedbackMessage, setFeedbackMessage] = React.useState("");
 
   const onSubmit = (data) => {
-    if (data.email === "gurosano@gmail.com" && data.password === "123456") {
+    if (data.email === "teste.pratico@gmail.com" && data.password === "123456") {
       console.log("Login realizado com sucesso");
       
       localStorage.setItem("isLoggedIn", "true");
