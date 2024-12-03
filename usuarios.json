@@ -2,8 +2,8 @@
   "usuarios": [
     {
       "id": "1",
-      "nome": "Gustavo Rosano Teixeira",
-      "email": "gustavo.rosano@outlook.com",
+      "nome": "Gustavo Rosano",
+      "email": "gustavo.rosano@example.com",
       "faturamentoAnual": "R$ 1.000,00"
     },
     {
@@ -17,30 +17,6 @@
       "nome": "João Souza",
       "email": "joao.souza@example.com",
       "faturamentoAnual": "R$ 5.000,00"
-    },
-    {
-      "id": "6259",
-      "nome": "Gustavo",
-      "email": "gurosano@gmail.com",
-      "faturamentoAnual": "1000"
-    },
-    {
-      "id": "7478",
-      "nome": "Gustavo",
-      "email": "gurosano@gmail.com",
-      "faturamentoAnual": "1000"
-    },
-    {
-      "id": "3af3",
-      "nome": "Gustavo",
-      "email": "gurosano@gmail.com",
-      "faturamentoAnual": 100000
-    },
-    {
-      "id": "4c4b",
-      "nome": "Gustavo",
-      "email": "gurosano@gmail.com",
-      "faturamentoAnual": 100000
     }
   ],
   "enderecos": [
@@ -59,14 +35,6 @@
       "estado": "SP",
       "cep": "01305-010",
       "id": "bfb3"
-    },
-    {
-      "id": "2242",
-      "rua": "Teste",
-      "cidade": "São Paulo",
-      "estado": "SP",
-      "cep": "04191190",
-      "usuarioId": 1
     }
   ]
 }

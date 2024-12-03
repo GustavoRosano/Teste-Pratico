@@ -26,16 +26,8 @@ const UsersTable = () => {
       });
   }, [router]);
 
-  const handleLogout = () => {
-    localStorage.setItem("isLoggedIn", "false");
-    router.push("/login"); 
-  };
-
   return (
-    <div>
-      <button onClick={handleLogout} className="bg-red-500 text-white font-bold rounded px-3 py-1 mb-8">
-        Logout
-      </button>
+    <div className="w-full max-w-[1440px] px-10">
       <h1 className="uppercase text-xl font-bold mb-3">Faturamento Anual de Cada Usuário</h1>
       <div className="flex flex-col w-full max-w-[1440px] max-h-[500px] overflow-y-auto">
         {loading ? (
